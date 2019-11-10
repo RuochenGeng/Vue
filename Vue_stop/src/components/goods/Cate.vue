@@ -68,7 +68,7 @@
         ref="addCateFormRef"
         label-width="100px"
       >
-        <el-form-item label="分类名称：" prop="name">
+        <el-form-item label="分类名称：" prop="cat_name">
           <el-input v-model="addCateForm.cat_name"></el-input>
         </el-form-item>
         <el-form-item label="父级分类：">
