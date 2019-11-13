@@ -15,7 +15,7 @@
         </el-col>
       </el-row>
       <!-- 主体部分 -->
-      <el-table :data="rolelist" stripe style="width: 100%" border>
+      <el-table :data="rolelist" stripe style="width: 100%" border :row-key="id">
         <el-table-column type="expand">
           <template slot-scope="scope">
             <el-row

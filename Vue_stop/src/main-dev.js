@@ -16,10 +16,19 @@ import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
+// 导入Nprogress
+import Nprogress from 'nprogress'
+import 'nprogress/nprogress.css'
 // 配置请求后的根路径
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+
 axios.interceptors.request.use(config => {
+  Nprogress.start()
   config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config
+})
+axios.interceptors.response.use(config => {
+  Nprogress.done()
   return config
 })
 Vue.prototype.$http = axios
